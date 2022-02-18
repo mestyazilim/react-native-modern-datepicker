@@ -128,8 +128,12 @@ const SelectTime = () => {
   useEffect(() => {
     show &&
       setTime({
-        minute: 0,
-        hour: 0,
+        minute: utils
+              .getDate(mainState.selectedDate)
+              .minute(),
+        hour: utils
+              .getDate(mainState.selectedDate)
+              .hour(),
       });
   }, [show]);
 
